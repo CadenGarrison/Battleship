@@ -2,6 +2,7 @@
 public class Board
 	{
 		static String [][] board = new String[5][5];
+		static String [][] enemy;
 		
 		public static void displayBoard()
 		{
@@ -29,7 +30,7 @@ public class Board
 		
 		public static void generateEnemy()
 			{
-				String [][] enemy = new String[5][5];
+				enemy = new String[5][5];
 				// Destroyer
 				enemy [2][2] = "DesA";
 				enemy [2][3] = "DesB";
