@@ -20,15 +20,14 @@ public class PlayGame
 					{
 						for (int col = 0; col < Board.enemy[0].length; row++)
 							{
+								if (Board.enemy[row][col].equals(Board.enemy[targetRow][targetCol]))
+											{
+												System.out.println("It's a hit!");
+											}
 								// We want to compare Board.enemy[targetRow][targetCol] to every index in Board.enemy
 							}
 					}
-				if (Board.enemy[targetRow][targetCol].equals(""))
-					{
-						
-					}
-				
-					}
+				// Need parameters for non-hits
 			
 			}
 			}
