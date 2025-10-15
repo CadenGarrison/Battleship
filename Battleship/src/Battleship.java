@@ -7,7 +7,6 @@ public class Battleship
 		
 		public static void main(String[] args)
 			{
-			// THIS IS MY MESSAGE TO MR. MCGUIRE THAT I HAVE IN FACT SUCCESSFULLY OPERATED GITHUB
 			Board.displayBoard();
 			Board.generateEnemy();
 			introduction();
@@ -17,6 +16,7 @@ public class Battleship
 		{
 			System.out.println("Welcome to Battleship. Do you know how to play? (1) Yes (2) No");
 			int instructions = userIntInput.nextInt();
+			
 			if (instructions == 2)
 			{
 				System.out.println(" ");
@@ -26,7 +26,6 @@ public class Battleship
 				System.out.println("Hits and misses will be tracked on the board in front of you.");
 				System.out.println("You must land the exact number of hits in the exact location to sink a ship.");
 				System.out.println("Good luck!");
-				System.out.println("Now...");
 				PlayGame.playGame();
 			}
 			else if (instructions == 1)

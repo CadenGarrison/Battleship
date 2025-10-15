@@ -2,7 +2,7 @@
 public class PlayGame
 	{	
 	static boolean isPlaying = true;
-	static int enemyShips;
+	static int enemyShips = 2;
 	static int targetRow;
 	static String target;
 	static int targetCol;
@@ -13,26 +13,46 @@ public class PlayGame
 					{
 						if (enemyShips != 0)
 							{
-				System.out.println("Where would you like to aim?");
+				System.out.println("Now where would you like to aim?");
 				target = Battleship.userInput.nextLine();
 				translateToCoordinates();
-				for (int row = 0; row < Board.enemy.length; row++ )
+				
+				for (int row = 0; row < 5; row++ )
 					{
-						for (int col = 0; col < Board.enemy[0].length; row++)
+						for (int col = 0; col < 5; col++)
 							{
-								if (Board.enemy[row][col].equals(Board.enemy[targetRow][targetCol]))
+								if (Board.enemy[targetRow][targetCol].equals(Board.enemy[row][col]))
 											{
 												System.out.println("It's a hit!");
+												enemyShips -= 0.4;
+												playGame();
 											}
 								// We want to compare Board.enemy[targetRow][targetCol] to every index in Board.enemy
 							}
+						
+					}	
+				System.out.println("It's a miss!");
+				playGame();
+				//It works! Now we need to track hits
+							}
+						else if (enemyShips==0)
+						{
+							System.out.println("You win!");
+							System.exit(0);
+						}
+						else
+						{
+							playGame();
+						}
 					}
-				// Need parameters for non-hits
+				
+					
+				}
 			
-			}
-			}
 		public static void translateToCoordinates()
 		{
+			target.toUpperCase();
+			
 			if (target.substring(0,1).equals("A"))
 				{
 					targetRow = 0;

@@ -1,8 +1,8 @@
 
 public class Board
 	{
-		static String [][] board = new String[5][5];
-		static String [][] enemy;
+		static String [][] board = new String[5][5];  
+		static String [][] enemy = {{"A1", "A2", "A3", "A4", "A5"}, {"B1", "B2", "B3", "B4", "B5"}, {"C1", "C2", "C3", "C4", "C5"}, {"D1", "D2", "D3", "D4", "D5"}, {"E1", "E2", "E3", "E4", "E5"}};
 		
 		public static void displayBoard()
 		{
@@ -30,15 +30,16 @@ public class Board
 		
 		public static void generateEnemy()
 			{
-				enemy = new String[5][5];
+			// In the future, we will randomize these positions to serve as an "AI" enemy
+				
 				// Destroyer
-				enemy [2][2] = "DesA";
-				enemy [2][3] = "DesB";
+				enemy [2][2] = "DesA"; // C3
+				enemy [2][3] = "DesB"; // C4
 				
 				//Cruiser
-				enemy [4][4] = "CruC";
-				enemy [3][4] = "CruB";
-				enemy [2][4] = "CruA";
+				enemy [4][4] = "CruC"; //C5
+				enemy [3][4] = "CruB"; //D5
+				enemy [2][4] = "CruA"; //E5
 				
 			}
 	}
